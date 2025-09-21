@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Animations */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px 5px #4ade80;
+  }
+  50% {
+    box-shadow: 0 0 40px 10px #22c55e;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glossyGlow {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-glow {
+  animation: glow 1.5s infinite alternate;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+.animate-glossyGlow {
+  animation: glossyGlow 3s linear infinite;
+}
