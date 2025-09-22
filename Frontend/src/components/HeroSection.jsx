@@ -3,7 +3,27 @@ import GlassCard from './GlassCard';
 
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-100 to-white px-4 bg-[url('/bg-abstract.svg')] bg-no-repeat bg-right-bottom">
+    <>
+          <header className="flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
+        <div className="text-2xl font-bold">Optivize AI</div>
+        <nav className="space-x-6 text-green-800 font-medium">
+          {["Product", "Features", "Pricing", "Solutions", "About Us"].map(
+            (item) => (
+              <a
+                key={item}
+                href="#"
+                className="hover:text-green-600 transition"
+              >
+                {item}
+              </a>
+            )
+          )}
+        </nav>
+        <button className="bg-green-400 px-6 py-2 rounded-full text-white font-semibold shadow-lg ring-2 ring-green-200 hover:bg-green-500 transition">
+          Get Started &rarr;
+        </button>
+      </header>
+          <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-100 to-white px-4 bg-[url('/bg-abstract.svg')] bg-no-repeat bg-right-bottom">
       <div className="max-w-3xl text-center z-10 animate-fadeIn">
         <h1 className="text-6xl font-extrabold text-green-900 mb-6">
           Supercharge Your Business with <br />
@@ -39,5 +59,7 @@ export default function HeroSection() {
       </div>
       <div className="absolute inset-0 pointer-events-none animate-glossyGlow"></div>
     </section>
+    </>
+
   );
 }

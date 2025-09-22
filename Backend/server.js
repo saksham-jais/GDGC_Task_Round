@@ -7,6 +7,8 @@ const orderRoutes = require("./routes/orderRoutes");
 const statsRoutes = require("./routes/statsRoutes");
 const authenticateToken = require("./middleware/auth");
 const rateLimiter = require("./middleware/rateLimiter");
+const bcrypt = require("bcrypt");
+const User = require("./models/User");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
