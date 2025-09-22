@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import StatsSection from '../components/StatsSection';
-import FeatureSection from '../components/FeatureSection'; // You can add a feature component like Automation steps
+import FeatureSection from '../components/FeatureSection';
 
-export default function Dashboard({ token }) {
+export default function Dashboard({ token, username, logout }) {
   const [stats, setStats] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    fetch('/api/stats', {
+    fetch('http://localhost:4000/api/stats', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -22,7 +22,7 @@ export default function Dashboard({ token }) {
 
   return (
     <div>
-      <HeroSection />
+      <HeroSection logout={logout} username={username} />
       <FeatureSection />
       <StatsSection stats={stats} loading={loading} />
     </div>
